@@ -10,7 +10,6 @@ const axiosObj: AxiosConfig = {
 };
 
 const instance = axios.create(axiosObj);
-
 const responseBody = (response: AxiosResponse) => response.data;
 
 const requests = {
@@ -23,7 +22,7 @@ const requests = {
 export const api = {
   products: {
     getProducts: (): Promise<ProductsResponse> =>
-      requests.get('/products'),
+      requests.get('/products?limit=20'),
     getCategories: (): Promise<string[]> =>
       requests.get('/products/categories'),
   },

@@ -1,3 +1,35 @@
+## How to run your app with all the necessary details
+
+```bash
+
+# to install
+npm install
+
+# to run on android
+npm run android
+
+# to run on IOS
+npm run ios
+
+```
+
+## Relating to the task please add answers to the following questions;
+
+1 How might you make this app more secure?
+- Creating two different navigation stacks, one authorized which needs authentication to access endpoints about products
+and another unauthorized stack which allows users limited endpoints of authentication such as Registering, Logging in, requesting a forgot password etc.
+
+2 How would you make this solution scale to millions of records?
+- Adding pagination for products and more memoized functions and further backend improvements.
+
+3 What else would you have liked to improve given more time?
+- On the front end I would change the ProductCard because in most cases the title and cost can't be seen, I would also strive for a more pixel perfect approach on design implementation .
+
+
+
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started

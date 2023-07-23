@@ -29,5 +29,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   message: {textAlign: 'center', fontSize: 20, color: '#FFF'},
+  brandList: {
+    // display: 'flex',
+    // flexDirection : 'row',
+    // justifyContent : 'center',
+    // marginLeft : 20,
+    // marginRight : 20,
+    // marginTop: 10
+  },
+  scroll: {
+    flexDirection: 'row',
+    // backgroundColor : 'red',
+    paddingVertical: 10,
+    // marginBottom : 0
+  },
 });
 export default styles;
