@@ -12,10 +12,7 @@ import {
 } from 'react-native';
 import {Button} from 'react-native-paper';
 // import styles from './Login.styles';
-// import CheckBox from '@react-native-community/checkbox';
-// import { Button } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
-// const myIcon = ;
 
 interface Props {
   navigation: NavigationProp<ParamListBase>;
@@ -90,7 +87,7 @@ function Login(props: Props): JSX.Element {
               theme={{colors: {primary: 'white', onPrimary: '#000'}}}
               mode="contained"
               onPress={() => {
-                // props.navigation.navigate('Products');
+                props.navigation.navigate('Products');
               }}>
               Sign In
             </Button>
