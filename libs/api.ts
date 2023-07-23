@@ -1,5 +1,4 @@
 import axios, {AxiosResponse} from 'axios';
-// import {ProductResponse} from './types';
 
 export type AxiosConfig = {baseURL: string | undefined; headers?: {}};
 
@@ -23,7 +22,7 @@ const requests = {
 
 export const api = {
   products: {
-    getProducts: (): Promise<{limit: number; products: any[]}> =>
+    getProducts: (): Promise<ProductsResponse> =>
       requests.get('/products'),
     getCategories: (): Promise<string[]> =>
       requests.get('/products/categories'),

@@ -3,7 +3,6 @@ import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   Image,
-  StyleSheet,
   View,
   Text,
   ScrollView,
@@ -11,7 +10,7 @@ import {
   TextInput,
 } from 'react-native';
 import {Button} from 'react-native-paper';
-// import styles from './Login.styles';
+import styles from './Login.styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 interface Props {
@@ -97,59 +96,5 @@ function Login(props: Props): JSX.Element {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  loginFormContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  title: {
-    color: '#fff',
-    fontSize: 16,
-    marginTop: '20%',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  input: {
-    backgroundColor: '#fff',
-    width: '80%',
-    borderRadius: 5,
-    marginTop: '5%',
-    padding: 5,
-    color: 'black',
-  },
-  logo: {
-    alignSelf: 'center',
-    marginTop: 100,
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  icon: {
-    position: 'absolute',
-    top: 24,
-    right: 10,
-    zIndex: 2,
-  },
-  otherOptions: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 5,
-    justifyContent: 'space-between',
-    width: '80%',
-  },
-  checkBox: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  content: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default Login;

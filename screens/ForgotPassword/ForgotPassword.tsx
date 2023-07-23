@@ -2,7 +2,6 @@ import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   Image,
-  StyleSheet,
   View,
   Text,
   ScrollView,
@@ -13,6 +12,7 @@ import {
 import {Button} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import styles from './ForgotPassword.styles'
 
 interface Props {
   navigation: NavigationProp<ParamListBase>;
@@ -23,7 +23,6 @@ function ForgotPassword(props: Props): JSX.Element {
 
   const onForgotPassword = () => {
     setLinkSent(true);
-    //   props.navigation.navigate('Products');
   };
 
   return (
@@ -91,64 +90,5 @@ function ForgotPassword(props: Props): JSX.Element {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  loginFormContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  title: {
-    color: '#fff',
-    fontSize: 16,
-    marginTop: '20%',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  input: {
-    backgroundColor: '#fff',
-    width: '80%',
-    borderRadius: 5,
-    marginTop: '5%',
-    padding: 5,
-    color: 'black',
-  },
-  logo: {
-    alignSelf: 'center',
-    marginTop: 100,
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  icon: {
-    position: 'absolute',
-    top: 24,
-    right: 10,
-    zIndex: 2,
-  },
-  content: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  disclaimer: {
-    color: 'white',
-    fontSize: 12,
-    width: '80%',
-    paddingTop: 15,
-    paddingBottom: 15,
-    textAlign: 'center',
-  },
-  backButton: {
-    padding: 20,
-    display : 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  backButtonText: {
-    color: 'white',
-  },
-});
 
 export default ForgotPassword;

@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import {
   View,
   TextInput,
@@ -12,13 +12,13 @@ import {
 import {api} from '../../libs/api';
 import DropDownPicker from 'react-native-dropdown-picker';
 import ProductCard from '../../components/ProductCard';
+import styles from './Products.styles'
 
 function Products(): JSX.Element {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
-  // const [searchedProducts, setSearchedProducts] = useState<any[]>([]);
   const [categories, setCategories] = useState<
     Array<{label: string; value: string}>
   >([{label: 'Select all Products', value: ''}]);
@@ -61,11 +61,13 @@ function Products(): JSX.Element {
     setFilteredProducts(filtered);
   };
 
-  const onSearch = (filteredProducts: Product[]) => {
-    return filteredProducts.filter(product =>
-      product.title.toLowerCase().includes(searchText.toLowerCase()),
-    );
-  };
+  const onSearch = useMemo(() => {
+    return (filteredProducts: Product[]) => {
+      return filteredProducts.filter(product =>
+        product.title.toLowerCase().includes(searchText.toLowerCase()),
+      );
+    };
+  }, [searchText]);
 
   useEffect(() => {
     getProducts();
@@ -122,31 +124,5 @@ function Products(): JSX.Element {
       </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {backgroundColor: 'rgb(30, 52, 69)', height : "100%", paddingLeft :5, paddingRight: 5},
-  input : {
-    width: '49%',
-    backgroundColor: '#fff',
-    borderRadius: 8,
-  },
-  dropDown : {
-    width: '49%',
-    marginLeft : 7
-  },
-  productsList : { flex: 1, width: '100%', padding: 5 },
-  logo: {
-    alignSelf: 'center',
-    marginTop: 20,
-  },
-  header: {
-    marginTop : 30,
-    display: 'flex',
-    flexDirection : 'row',
-    justifyContent : 'space-between',
-    alignItems : 'center',
-  },
-  message : { textAlign: 'center', fontSize: 20, color: '#FFF' }
-});
 
 export default Products;
