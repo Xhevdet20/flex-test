@@ -10,7 +10,7 @@ import {
   SafeAreaView,
   TextInput,
 } from 'react-native';
-import { Button } from 'react-native-paper';
+import {Button} from 'react-native-paper';
 // import styles from './Login.styles';
 // import CheckBox from '@react-native-community/checkbox';
 // import { Button } from 'react-native-paper';
@@ -78,44 +78,27 @@ function Login(props: Props): JSX.Element {
 
               <Text
                 style={{color: '#fff', fontSize: 14}}
-                // onPress={() => {
-                //   props.navigation.navigate('Forgot Password')
-                // }}
+                onPress={() => {
+                  props.navigation.navigate('Forgot Password')
+                }}
               >
                 I forgot my password
               </Text>
             </View>
-                    <Button
-           style={{ width: "80%", marginTop: '10%' }}
-          theme={{ colors: { primary: 'white', onPrimary: "#000" } }}
-          mode="contained"
-         onPress={() => {
-           props.navigation.navigate('Products')
-          }}
-        >
-         Sign In
-        </Button> 
+            <Button
+              style={{width: '80%', marginTop: '10%'}}
+              theme={{colors: {primary: 'white', onPrimary: '#000'}}}
+              mode="contained"
+              onPress={() => {
+                // props.navigation.navigate('Products');
+              }}>
+              Sign In
+            </Button>
           </View>
         </View>
       </SafeAreaView>
     </ScrollView>
   );
-  // return (
-  //     <>
-  //       <View style={{ ...styles.flex, justifyContent: "space-between", width: "80%" }}>
-  //       {/* <Button
-  //         style={{ width: "80%", marginTop: '10%' }}
-  //         theme={{ colors: { primary: 'white', onPrimary: "#000" } }}
-  //         mode="contained"
-  //         onPress={() => {
-  //           props.navigation.navigate('Products')
-  //         }}
-  //       >
-  //         Sign In
-  //       </Button> */}
-  //     </>
-  //   // </Background>
-  // );
 }
 
 const styles = StyleSheet.create({
@@ -135,7 +118,7 @@ const styles = StyleSheet.create({
     width: '80%',
     borderRadius: 5,
     marginTop: '5%',
-    padding: 10,
+    padding: 5,
     color: 'black',
   },
   logo: {
@@ -148,7 +131,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    top: 29,
+    top: 24,
     right: 10,
     zIndex: 2,
   },
